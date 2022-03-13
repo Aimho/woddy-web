@@ -57,6 +57,7 @@ const CalendarBodyPresenter = ({ today, days, onChangeDate }: IProps) => {
                 {month}
               </Typography>
               <IconButton
+                disableRipple
                 onClick={onClick}
                 sx={{ padding: 0, overflow: "hidden" }}
               >

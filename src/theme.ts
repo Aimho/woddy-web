@@ -31,6 +31,9 @@ const theme = createTheme({
     },
     divider: "#E5E5E5",
   },
+  typography: {
+    fontFamily: "'Merriweather Sans', sans-serif",
+  },
 });
 
 export default theme;
