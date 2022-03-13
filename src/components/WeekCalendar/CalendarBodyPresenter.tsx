@@ -1,23 +1,18 @@
 import { Box, Grid, IconButton, Typography, useTheme } from "@mui/material";
+import { IWeekCalendarProps } from ".";
 
-interface IProps {
+interface IProps extends Pick<IWeekCalendarProps, "onChangeDate"> {
   today: string;
   days: {
     date: Date;
     day: string;
     month: string;
     isMark: boolean;
+    isSelected: boolean;
   }[];
-  selectedDay: string;
-  onClickDay: React.Dispatch<React.SetStateAction<Date>>;
 }
 
-const CalendarBodyPresenter = ({
-  today,
-  days,
-  selectedDay,
-  onClickDay,
-}: IProps) => {
+const CalendarBodyPresenter = ({ today, days, onChangeDate }: IProps) => {
   const theme = useTheme();
   const RenderMark: React.FC<{ isMark: boolean }> = ({ isMark }) => {
     if (!isMark) return null;
@@ -26,33 +21,62 @@ const CalendarBodyPresenter = ({
         width={6}
         height={6}
         borderRadius={3}
-        sx={{ backgroundColor: theme.palette.primary.main, marginX: "auto" }}
+        sx={{
+          backgroundColor: theme.palette.primary.main,
+          position: "absolute",
+          bottom: 6,
+          left: "calc(50% - 3px)",
+        }}
       />
     );
   };
 
   return (
-    <Box flex={1} sx={{ mt: 4 }}>
+    <Box sx={{ mt: 4 }}>
       <Grid
         container
-        flex={1}
-        justifyContent={"space-between"}
+        wrap="nowrap"
         alignItems="center"
+        justifyContent="space-between"
       >
-        {days.map(({ date, day, month, isMark }) => {
-          const variant = day === today ? "primary" : "subtitle1";
-          const backgroundColor =
-            day === selectedDay ? theme.palette.background.box : "transparent";
-          const onClick = () => onClickDay(date);
+        {days.map(({ date, day, month, isMark, isSelected }) => {
+          const todayColor =
+            theme.palette.text[day === today ? "main" : "secondary"];
+          const backgroundColor = isSelected
+            ? theme.palette.background.box
+            : "transparent";
+          const onClick = () => onChangeDate(date);
 
           return (
-            <Grid key={day} item flex={1} textAlign="center">
-              <Typography variant={"subtitle1"} component="span">
+            <Grid key={day} item textAlign="center">
+              <Typography
+                component="p"
+                variant={"subtitle1"}
+                color={theme.palette.text.primary}
+              >
                 {month}
               </Typography>
-              <IconButton onClick={onClick} sx={{ backgroundColor }}>
-                <Box width={34} height={34}>
-                  <Typography variant={variant} component="span">
+              <IconButton
+                onClick={onClick}
+                sx={{ padding: 0, overflow: "hidden" }}
+              >
+                <Box
+                  width={40}
+                  height={40}
+                  sx={{
+                    backgroundColor,
+                    display: "flex",
+                    alignItems: "center",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Typography
+                    gutterBottom
+                    component="p"
+                    color={todayColor}
+                    variant={"subtitle1"}
+                  >
                     {day}
                   </Typography>
                   <RenderMark isMark={isMark} />

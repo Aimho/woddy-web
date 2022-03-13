@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import CalendarBodyContainer from "./CalendarBodyContainer";
 import CalendarHeaderContainer from "./CalendarHeaderContainer";
 
-interface IProps {
+export interface IWeekCalendarProps {
+  date: Date;
   onChangeDate: (value: Date) => void;
   markDays?: string[];
 }
 
-const WeekCalendar = ({ onChangeDate, markDays }: IProps) => {
-  const [date, setDate] = useState(new Date());
+const WeekCalendar = ({ date, onChangeDate, markDays }: IWeekCalendarProps) => {
   useEffect(() => {
     onChangeDate(date);
   }, [date, onChangeDate]);
 
   return (
     <section>
-      <CalendarHeaderContainer date={date} setDate={setDate} />
+      <CalendarHeaderContainer date={date} onChangeDate={onChangeDate} />
       <CalendarBodyContainer
         date={date}
-        setDate={setDate}
+        onChangeDate={onChangeDate}
         markDays={markDays}
       />
     </section>

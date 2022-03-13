@@ -12,15 +12,10 @@ const CalendarHeaderPresenter = ({
   onClickBack,
   onClickForward,
 }: IProps) => (
-  <Box flex={1}>
-    <Grid
-      container
-      justifyContent={"space-between"}
-      alignItems="center"
-      flex={1}
-    >
+  <Box>
+    <Grid container justifyContent={"space-between"} alignItems="center">
       <Grid item>
-        <IconButton onClick={onClickBack}>
+        <IconButton disableRipple onClick={onClickBack} sx={{ paddingX: 0 }}>
           <ArrowBackIosNew fontSize="small" />
         </IconButton>
       </Grid>
@@ -30,7 +25,7 @@ const CalendarHeaderPresenter = ({
         </Typography>
       </Grid>
       <Grid item>
-        <IconButton onClick={onClickForward}>
+        <IconButton disableRipple onClick={onClickForward} sx={{ paddingX: 0 }}>
           <ArrowForwardIos fontSize="small" />
         </IconButton>
       </Grid>

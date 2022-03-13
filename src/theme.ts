@@ -6,19 +6,12 @@ declare module "@mui/material/styles" {
   }
 
   // allow configuration using `createTheme`
-  interface TypographyVariantsOptions {
-    primary?: React.CSSProperties;
+  interface TypeText {
+    main?: string;
   }
 
   interface TypeBackground {
     box?: string;
-  }
-}
-
-// Update the Typography's variant prop options
-declare module "@mui/material/Typography" {
-  interface TypographyPropsVariantOverrides {
-    primary: true;
   }
 }
 
@@ -32,17 +25,11 @@ const theme = createTheme({
       main: "#01A299",
     },
     text: {
+      main: "#01A299",
       primary: "#202020",
       secondary: "#626262",
     },
     divider: "#E5E5E5",
-  },
-  typography: {
-    primary: {
-      fontSize: "1rem",
-      lineHeight: 1.75,
-      color: "#01A299",
-    },
   },
 });
 
