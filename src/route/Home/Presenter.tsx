@@ -47,7 +47,7 @@ const Presenter = ({ calendarProps, contentsProps }: IProps) => {
   const RenderWod = () => {
     let label = wod;
     if (!wod) {
-      label = switchProps.disabled
+      label = !isControl
         ? "크로스핏 W.O.D가 아직 안 나왔어요."
         : "크로스핏 수업이 없어요.";
     }
