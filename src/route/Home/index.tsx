@@ -43,7 +43,7 @@ const Home = () => {
   const contentsProps = {
     title: format(date, "M월 d일 (eee)", { locale: ko }),
     wod: selectedWod(),
-    isControl: diffToday < 0,
+    isControl: diffToday <= 0,
     switchProps: {
       value: markDay,
       onChange: onChangeMark,

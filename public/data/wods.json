@@ -18,5 +18,35 @@
     "id": 4,
     "date": "2022-03-11",
     "wod": "Shoulder press\n5x4 (80%)\n​\nAMRAP IN 12MIN\n12/10 Cal Row \n9 H.S.P.U\n6 Clean & jerk (135/95)"
+  },
+  {
+    "id": 5,
+    "date": "2022-03-14",
+    "wod": "back squat 3x3 (90%)\n​\n'22.3'\nFor time of (time cap 12min)\n21 Pull up\n42 D.U (x2 S.U)\n21 Thruster (95/65)\n18 C.2.B\n36 D.U\n18 Thruster (115/75)\n15 Bar muscle up\n30 D.U\n15 Thruster (135/85)"
+  },
+  {
+    "id": 6,
+    "date": "2022-03-15",
+    "wod": "Snatch Complex\nON 2MIN / 5R\n1 Hang power snatch \n1 Hang squat snatch\n1 Snatch\n​\n4RFT\n200m row\n20 Push up\n15 S.2.O (135/85)"
+  },
+  {
+    "id": 7,
+    "date": "2022-03-16",
+    "wod": "Deadlift 3x4(90%)\nstrict TTB 8x4\n​\nAMRAP IN 13MIN\n5 Deadlift (185/105)\n10 H.S.U\n3 Hang power clean \n13/11 Cal row"
+  },
+  {
+    "id": 8,
+    "date": "2022-03-17",
+    "wod": "Interval warm up\nON 20sec OFF 40sec / 9R\n3R\nMax meters Shuttle run\nRest 1MIN\n3R\nMax reps Burpee bar touch\nRest 1MIN\n3R\nMax Cal bike\n​\nFor time of\n75 back squat (135/75)\n25 Box jump (24'/20')\n75 KBS (24/16)\n25 Box jump"
+  },
+  {
+    "id": 9,
+    "date": "2022-03-18",
+    "wod": "bench press 5x6 (75%~)\nWeighted pull up 5x6\n​\nAMRAP IN 10MIN\n12 S.D.H.P (115/65)\n12 T.2.B\n2 Wall walk"
+  },
+  {
+    "id": 10,
+    "date": "2022-03-19",
+    "wod": "shoulder press 5x4\n​\n​for time\n30 jerk 155/105\n300m row\n20 jerk \n300m row\n10 jerk\n300m row\n30 hang power clean \n200m row\n20 hang power clean\n200m row\n10 hang power clean\n200m row"
   }
 ]
