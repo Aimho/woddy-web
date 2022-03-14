@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
-import { differenceInCalendarDays, format } from "date-fns";
+import { useEffect, useState } from "react";
+import { differenceInCalendarDays, format, addDays } from "date-fns";
 import { ko } from "date-fns/locale";
 import useMark from "../../hook/useMark";
 import useUserId from "../../hook/useUserId";
@@ -44,6 +44,7 @@ const Home = () => {
     title: format(date, "M월 d일 (eee)", { locale: ko }),
     wod: selectedWod(),
     isControl: diffToday <= 0,
+    onAddDay: (day: number) => setDate(addDays(date, day)),
     switchProps: {
       value: markDay,
       onChange: onChangeMark,
