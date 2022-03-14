@@ -68,25 +68,21 @@ const Presenter = ({ calendarProps, contentsProps }: IProps) => {
   return (
     <Container maxWidth="xs" sx={{ mt: 2 }}>
       <WeekCalendar {...calendarProps} />
-      <TouchSwipe onChangeIndex={onAddDay}>
-        <Box sx={{ mt: 6, mb: 2 }} component="article">
-          <Grid
-            container
-            alignItems={"center"}
-            justifyContent={"space-between"}
-          >
-            <Box>
-              <Typography variant="subtitle1">{title}</Typography>
-              <Collapse in={isVisibleSwitch}>
-                <RenderTrainingLabel />
-              </Collapse>
-            </Box>
+      <Box sx={{ mt: 6, mb: 2 }} component="article">
+        <Grid container alignItems={"center"} justifyContent={"space-between"}>
+          <Box>
+            <Typography variant="subtitle1">{title}</Typography>
             <Collapse in={isVisibleSwitch}>
-              <Switch {...switchProps} />
+              <RenderTrainingLabel />
             </Collapse>
-          </Grid>
-        </Box>
-        <Divider />
+          </Box>
+          <Collapse in={isVisibleSwitch}>
+            <Switch {...switchProps} />
+          </Collapse>
+        </Grid>
+      </Box>
+      <Divider />
+      <TouchSwipe onChangeIndex={onAddDay}>
         <Box sx={{ mt: 1 }} component="article">
           <RenderWod />
         </Box>
